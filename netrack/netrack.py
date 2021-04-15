@@ -139,7 +139,6 @@ def main():
 
             if ip and rng and device: 
                 netrack()
-
             else:
                 usage()
 
