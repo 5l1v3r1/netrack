@@ -34,12 +34,12 @@ def usage():
     print("Usage: {0} --ip 192.168.1. --rng 255 --device wlan0".format(argv[0]))
 
     print("\nOptions:")
-    print("  -h: --help                           Print usage and exit.")
-    print("  -V: --version                        Print version information and exit.")
-    print("  -i: --ip                             Enter an IP.")
-    print("  -r: --rng                            Scan a given range.")
-    print("  -d: --device                         Your network device.")
-    print("  -w: --write                          Write results to a file.")
+    print("  -h: --help                           Print usage and exit")
+    print("  -V: --version                        Print version information and exit")
+    print("  -i: --ip                             Enter the IP to scan")
+    print("  -r: --rng                            Scan a given range")
+    print("  -d: --device                         Your network device")
+    print("  -w: --write                          Write results to a file")
 
 
 def netrack():
