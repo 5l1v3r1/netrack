@@ -17,8 +17,7 @@ except (ImportError) as e:
 def version():
 
     print("+-----------------------------------------------------------------------------------+")
-    print("| netrack. Copyright (C) 2021 Nathalon                                              |")
-    print("| Version: 1.0.0                                                                    |")
+    print("| NeTrack. Copyright (C) 2021 Nathalon, Contact: braindisassm@gmail.com             |")
     print("|                                                                                   |")
     print("| This program comes with ABSOLUTELY NO WARRANTY; for details type `show w`.        |")
     print("| This is free software, and you are welcome to redistribute it                     |")
@@ -28,7 +27,7 @@ def version():
 
 def usage():
 
-    print("netrack 1.0.0 [ARP reconnaissance tool]")
+    print("NeTrack 1.0.0 [ARP reconnaissance tool]")
     print("Written by: Nathalon \n")
 
     print("Usage: {0} --ip 192.168.1. --rng 255 --device wlan0".format(argv[0]))
