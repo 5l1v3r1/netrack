@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from sys import argv
 from time import strftime
 from getopt import getopt, GetoptError
@@ -12,7 +10,7 @@ try:
 
 except (ImportError) as e:
     print(e)
-    
+
     exit(1)
 
 
@@ -59,10 +57,12 @@ def netrack():
     for num in range(0, rng):
         i = ip + (str(num))
 
-        arpRequest = Ether(dst="ff:ff:ff:ff:ff:ff:ff")/ARP(pdst=i, hwdst="ff:ff:ff:ff:ff:ff")
+        arpRequest = Ether(dst="ff:ff:ff:ff:ff:ff:ff") / \
+            ARP(pdst=i, hwdst="ff:ff:ff:ff:ff:ff")
 
         try:
-            arpResponse = srp1(arpRequest, timeout=0.1, verbose=0, iface=device)
+            arpResponse = srp1(arpRequest, timeout=0.1,
+                               verbose=0, iface=device)
 
         except (OSError) as e:
             print(e)
@@ -72,7 +72,8 @@ def netrack():
 
                 url = "http://macvendors.co/api/"
 
-                request = Request(url+arpResponse.hwsrc, headers={"User-Agent": "API Browser"})
+                request = Request(url+arpResponse.hwsrc,
+                                  headers={"User-Agent": "API Browser"})
                 response = urlopen(request)
 
                 reader = getreader("utf-8")
@@ -103,7 +104,8 @@ def netrack():
                         file.write("\n--------------------------------------------------------------------------------\n")
 
     print("--------------------------------------------------------------------------------")
-    print("-- ({0}) Captured ARP Req/Rep packets, from ({1}) hosts.   Total size: ({2})".format(len(count_responses), len(count_hosts), count_total_size))
+    print("-- ({0}) Captured ARP Req/Rep packets, from ({1}) hosts.   Total size: ({2})".format(
+        len(count_responses), len(count_hosts), count_total_size))
     print("-- Finished at: ({0})".format(strftime("%c")))
     print("--------------------------------------------------------------------------------")
 
@@ -123,9 +125,11 @@ def main():
     write = ""
 
     try:
-        opts, args = getopt(argv[1:], "hVi:r:d:w:", ["help", "version", "ip=", "rng=", "device=", "write="])
+        opts, args = getopt(argv[1:], "hVi:r:d:w:", [
+                            "help", "version", "ip=", "rng=", "device=", "write="])
 
-    except GetoptError: usage()
+    except GetoptError:
+        usage()
 
     else:
         try:
@@ -137,7 +141,7 @@ def main():
                 if opt in ("-d", "--device"): device = arg
                 if opt in ("-w", "--write"): write = arg
 
-            if ip and rng and device: 
+            if ip and rng and device:
                 netrack()
             else:
                 usage()
@@ -147,6 +151,7 @@ def main():
 
         except (TypeError):
             pass
+
 
 if __name__ == "__main__":
         main()
