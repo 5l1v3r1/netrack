@@ -1,4 +1,4 @@
-netrack
+Netrack
 =======
 
 Installation (using pip3)
