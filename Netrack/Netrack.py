@@ -41,7 +41,7 @@ def usage():
     print("  -w: --write                          Write results to a file")
 
 
-def netrack():
+def Netrack():
 
     print("--------------------------------------------------------------------------------")
     print("-- Starting at: ({0})".format(strftime("%c")))
@@ -141,7 +141,7 @@ def main():
                 if opt in ("-w", "--write"): write = arg
 
             if ip and rng and device:
-                netrack()
+                Netrack()
             else:
                 usage()
 
