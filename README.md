@@ -1,5 +1,8 @@
 Netrack
-=======
+=======================================================================================================================
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl-150x33.png?v=103)](https://opensource.org/licenses/GPL-3.0/)
+
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 Installation (using pip3)
 =========================
@@ -24,3 +27,5 @@ Installing from source is easy.
 6. Enter the source directory. `$ cd netrack/`.
 7. if you have sudo installed, log in as a sudoer and execute the setup.py file with sudo. `$ sudo python3 setup.py install`.
 8. Done! It should now be a simple case of executing `$ netrack` in your favorite terminal emulator.
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
