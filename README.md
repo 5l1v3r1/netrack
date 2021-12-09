@@ -14,21 +14,6 @@ Installation (using pip3): GNU/Linux [![Linux](https://svgshare.com/i/Zhy.svg)](
 **2. Now it's time to install scapy. `$ sudo pip3 install scapy`**  
 **3. Next, use pip3 to install netrack. `$ sudo pip3 install netrack`**  
 
-Installation (from source)
-==========================
-
-Installing from source is easy.
-
-1. First use wget to download scapy. `$ wget https://files.pythonhosted.org/packages/c6/8f/438d4d0bab4c8e22906a7401dd082b4c0f914daf2bbdc7e7e8390d81a5c3/scapy-2.4.4.tar.gz`.
-2. Extract the tar.gz package. `$ tar -xf scapy-2.4.4.tar.gz/`.
-3. Navigate to the extracted directory. `$ cd scapy-2.4.4/`.
-4. Now install the library. `$ sudo python3 setup.py install`.
-5. Next clone the file with git. `$ git clone https://github.com/Nathalon/netrack.git`.
-6. Enter the source directory. `$ cd netrack/`.
-7. if you have sudo installed, log in as a sudoer and execute the setup.py file with sudo. `$ sudo python3 setup.py install`.
-8. Done! It should now be a simple case of executing `$ netrack` in your favorite terminal emulator.
-
-
 Installation (installing via Git): GNU/Linux [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
 =======================================================================================================================
 
