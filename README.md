@@ -9,8 +9,7 @@ Installation (using pip3): GNU/Linux [![Linux](https://svgshare.com/i/Zhy.svg)](
 
 **The easiest and best way to install portrack on GNU/Linux is using pip3.**  
 
-**1. If you don't have pip3 installed, use your package manager to install the package python3-pip. For Debian based systems
-   the command to use would be. `$ sudo apt install python3-pip`**  
+**1. If you don't have pip3 installed, use your package manager to install the package python3-pip. For Debian based systems the command to use would be. `$ sudo apt install python3-pip`**  
 **2. Now it's time to install scapy. `$ sudo pip3 install scapy`**  
 **3. Next, use pip3 to install netrack. `$ sudo pip3 install netrack`**  
 
