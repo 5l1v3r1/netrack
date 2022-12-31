@@ -1,4 +1,5 @@
 from sys import argv
+from os import system
 from time import strftime
 from getopt import getopt, GetoptError
 from urllib.request import Request, urlopen
@@ -17,7 +18,7 @@ except (ImportError) as e:
 def version():
 
     print("+-----------------------------------------------------------------------------------+")
-    print("| NeTrack. Copyright (C) 2021 Nathalon, Contact: braindisassm@gmail.com             |")
+    print("| NeTrack. Copyright (C) 2022 Nathalon                                              |")
     print("|                                                                                   |")
     print("| This program comes with ABSOLUTELY NO WARRANTY; for details type `show w`.        |")
     print("| This is free software, and you are welcome to redistribute it                     |")
@@ -30,7 +31,7 @@ def usage():
     print("NeTrack 1.0.0 [ARP reconnaissance tool]")
     print("Written by: Nathalon \n")
 
-    print("Usage: {0} --ip 192.168.1. --rng 255 --device wlan0".format(argv[0]))
+    print("Usage: {0} -i 192.168.1. -r 255 -d wlan0".format(argv[0]))
 
     print("\nOptions:")
     print("  -h: --help                           Print usage and exit")
@@ -42,6 +43,8 @@ def usage():
 
 
 def Netrack():
+
+    system('clear')
 
     print("--------------------------------------------------------------------------------")
     print("-- Starting at: ({0})".format(strftime("%c")))
@@ -60,8 +63,7 @@ def Netrack():
             ARP(pdst=i, hwdst="ff:ff:ff:ff:ff:ff")
 
         try:
-            arpResponse = srp1(arpRequest, timeout=0.1,
-                               verbose=0, iface=device)
+            arpResponse = srp1(arpRequest, timeout=0.1, verbose=0, iface=device)
 
         except (OSError) as e:
             print(e)
@@ -71,8 +73,7 @@ def Netrack():
 
                 url = "http://macvendors.co/api/"
 
-                request = Request(url+arpResponse.hwsrc,
-                                  headers={"User-Agent": "API Browser"})
+                request = Request(url+arpResponse.hwsrc, headers={"User-Agent": "API Browser"})
                 response = urlopen(request)
 
                 reader = getreader("utf-8")
@@ -103,8 +104,7 @@ def Netrack():
                         file.write("\n--------------------------------------------------------------------------------\n")
 
     print("--------------------------------------------------------------------------------")
-    print("-- ({0}) Captured ARP Req/Rep packets, from ({1}) hosts.   Total size: ({2})".format(
-        len(count_responses), len(count_hosts), count_total_size))
+    print("-- ({0}) Captured ARP Req/Rep packets, from ({1}) hosts.   Total size: ({2})".format(len(count_responses), len(count_hosts), count_total_size))
     print("-- Finished at: ({0})".format(strftime("%c")))
     print("--------------------------------------------------------------------------------")
 
@@ -124,8 +124,7 @@ def main():
     write = ""
 
     try:
-        opts, args = getopt(argv[1:], "hVi:r:d:w:", [
-                            "help", "version", "ip=", "rng=", "device=", "write="])
+        opts, args = getopt(argv[1:], "hVi:r:d:w:", ["help", "version", "ip=", "rng=", "device=", "write="])
 
     except GetoptError:
         usage()
@@ -150,7 +149,6 @@ def main():
 
         except (TypeError):
             pass
-
 
 if __name__ == "__main__":
         main()
