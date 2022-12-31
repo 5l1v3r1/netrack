@@ -42,7 +42,7 @@ def usage():
     print("  -w: --write                          Write results to a file")
 
 
-def Netrack():
+def netrack():
 
     system('clear')
 
@@ -140,7 +140,7 @@ def main():
                 if opt in ("-w", "--write"): write = arg
 
             if ip and rng and device:
-                Netrack()
+                netrack()
             else:
                 usage()
 
